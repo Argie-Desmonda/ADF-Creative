@@ -1,0 +1,20 @@
+.btn-outline-primary:hover {
+  color: #ffffff;
+}
+
+.navbar .nav-link:hover {
+  color: #ed3224;
+}
+
+.navbar .nav-link.active {
+  color: #ed3224;
+}
+
+.full-height {
+  min-height: 100vh;
+  height: 100%;
+}
+
+html {
+  scroll-padding-top: 70px;
+}

@@ -1,0 +1,12 @@
+.plyr-hide-controls {
+  .plyr_controls,
+  .plyr_control {
+    opacity: 0 !important;
+  }
+}
+
+.plyr-object-fit {
+  video {
+    object-fit: cover;
+  }
+}

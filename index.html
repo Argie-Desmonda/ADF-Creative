@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="aos/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav
+        id="navbar"
+        class="navbar fixed-top navbar-expand-md bg-body-tertiary shadow p-1"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img
+              src="logo.png"
+              alt="ADF logo"
+              width="40"
+              height="34"
+              class="d-inline-block align-text-center"
+            />
+            ADF Creative
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#home"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#services">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#works">Works</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#teams">Teams</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div
+        class="container-fluid"
+        data-bs-target="#navbar"
+        data-bs-spy="scroll"
+        data-bs-smooth-scroll="true"
+        tabindex="0"
+      >
+        <div class="container-md">
+          <!--main header/welcome-->
+          <div
+            id="home"
+            class="row mt-5 py-5 full-height border-bottom border-primary border-2"
+          >
+            <div class="col-md-7 my-5">
+              <h1 class="display-1 text-center mt-5" data-aos="fade-up">
+                Welcome to
+              </h1>
+              <h1 class="display-1 text-center mb-5" data-aos="fade-up">
+                ADF Creative
+              </h1>
+              <p class="text-center my-5 mx-5" data-aos="fade-up">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
+                architecto quis at, animi quia asperiores ratione, accusamus
+                nostrum provident in dicta fuga minima dolore, quam iste magni
+                consectetur suscipit tempora.
+              </p>
+              <div
+                class="d-grid gap-5 d-md-flex justify-content-md-center mt-5 py-3"
+              >
+                <a
+                  href="#about"
+                  type="button"
+                  class="btn btn-lg btn-primary text-light"
+                  data-aos="fade-up"
+                  >Get Started</a
+                >
+
+                <button
+                  type="button"
+                  class="btn btn-lg btn-outline-primary"
+                  data-bs-toggle="modal"
+                  data-bs-target="#showreelModal"
+                  data-aos="fade-up"
+                >
+                  Watch Showreel
+                </button>
+
+                <!-- Modal -->
+                <div
+                  class="modal fade"
+                  id="showreelModal"
+                  tabindex="-1"
+                  aria-labelledby="showreelModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div
+                          class="plyr__video-embed ratio ratio-16x9"
+                          id="player"
+                        >
+                          <iframe
+                            id="showreel"
+                            src="https://www.youtube.com/embed/hk76ji8fJEo"
+                            allowfullscreen
+                            allowtransparency
+                            allow="autoplay"
+                          ></iframe>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 mx-auto my-auto d-none d-md-block">
+              <img
+                src="logo.png"
+                class="img-fluid"
+                data-aos="zoom-in"
+                alt="logo"
+              />
+            </div>
+          </div>
+
+          <div class="full-height border-bottom border-primary border-2">
+            <!--About Us-->
+            <div class="row py-5 border-danger-subtle">
+              <h1
+                id="about"
+                class="text-center my-3 text-primary"
+                data-aos="fade-down"
+              >
+                ABOUT US
+              </h1>
+              <p class="lead px-5 text-center" data-aos="fade-down">
+                We have fifteen years of experience in creating experiential
+                campaigns for brands across categories. We help you craft a
+                marketing campaign that is different from any other.
+              </p>
+              <p class="lead px-5 text-center" data-aos="fade-down">
+                At ADF we enable brands to deliver an integrated experiential
+                marketing strategy, working closely with clients to manage the
+                end-to-end delivery of their strategic experiential marketing
+                plans, from planning and creative solutions to project execution
+                management including report and analysis.
+              </p>
+              <p class="lead px-5 text-center" data-aos="fade-down">
+                As a full-service creative network, we have two core business to
+                handle your brand's needs.
+              </p>
+            </div>
+
+            <!--Clients-->
+            <div
+              class="px-5 py-5 bg-body-tertiary shadow p-3 rounded-4"
+              data-aos="fade-up"
+            >
+              <h1 class="text-center text-primary" data-aos="fade-up">
+                Our Clients
+              </h1>
+              <div class="row row-cols-12" data-aos="fade-up">
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/PetroChina logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/medco logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Pertamina logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Samsung Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Xiaomi logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Siloam Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Mayapada Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Aeon Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/BXC Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Lotte Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Cola Cola Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div class="col my-auto">
+                  <img
+                    src="assets/logo/Campina Logo.png"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <h4 class="text-center mt-2">And Many More...</h4>
+            </div>
+          </div>
+
+          <!--Services-->
+          <div class="row">
+            <h1
+              id="services"
+              class="text-center text-primary pt-5"
+              data-aos="fade-up"
+            >
+              SERVICES
+            </h1>
+            <p class="lead text-center" data-aos="fade-up">
+              Strategically tailored to meet your brand's goals
+            </p>
+
+            <!--CARD-->
+
+            <div
+              class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 pb-5 mb-5 mx-auto"
+            >
+              <div class="col" data-aos="flip-right" data-aos-delay="0">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i
+                        class="text-light fa fa-regular fa-building fa-lg py-4"
+                      ></i>
+                    </div>
+                    <h4 class="card-title">Corporate Event</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="flip-right" data-aos-delay="100">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i
+                        class="text-light fa fa-regular fa-copyright fa-lg py-4"
+                      ></i>
+                    </div>
+                    <h4 class="card-title">Brand Event</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col" data-aos="flip-right" data-aos-delay="200">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i
+                        class="text-light fa fa-solid fa-people-group fa-lg py-4"
+                      ></i>
+                    </div>
+                    <h4 class="card-title">Community Event</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col" data-aos="flip-right" data-aos-delay="300">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i class="text-light fa fa-solid fa-tent fa-lg py-4"></i>
+                    </div>
+                    <h4 class="card-title">On-ground Activation</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col" data-aos="flip-right" data-aos-delay="400">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i
+                        class="text-light fa fa-solid fa-person-chalkboard fa-lg py-4"
+                      ></i>
+                    </div>
+                    <h4 class="card-title">M.I.C.E</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col" data-aos="flip-right" data-aos-delay="500">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i
+                        class="text-light fa fa-solid fa-basketball fa-lg py-4"
+                      ></i>
+                    </div>
+                    <h4 class="card-title">Showbiz & Sport Event</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col" data-aos="flip-right" data-aos-delay="600">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i class="text-light fa fa-solid fa-video fa-lg py-4"></i>
+                    </div>
+                    <h4 class="card-title">Virtual Event</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="col" data-aos="flip-right" data-aos-delay="700">
+                <div class="card">
+                  <div class="card-body">
+                    <div
+                      class="iconbox bg-primary rounded-4 mb-2 text-center"
+                      style="width: 3rem"
+                    >
+                      <i
+                        class="text-light fa fa-solid fa-bullhorn fa-lg py-4"
+                      ></i>
+                    </div>
+                    <h4 class="card-title">Digital Marketing</h4>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a
+                      href="#"
+                      class="link-custom link-offset-3 link-underline link-underline-opacity-0"
+                      >Read More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Works-->
+          <div class="row">
+            <h1
+              id="works"
+              class="text-center text-primary pt-5"
+              data-aos="fade-up"
+            >
+              Works
+            </h1>
+
+            <!--Cards-->
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5 mx-auto">
+              <div class="col" data-aos="fade-up" data-aos-delay="0">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a short card.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="400">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="500">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="600">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="700">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col" data-aos="fade-up" data-aos-delay="800">
+                <div class="card h-100">
+                  <img
+                    src="https://picsum.photos/300/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                      This is a longer card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Teams-->
+          <div class="row">
+            <h1 id="teams" class="text-center mt-5 text-primary pt-5">
+              Our Teams
+            </h1>
+
+            <!--Cards-->
+            <div class="row row-cols-1 row-cols-md-6 g-4 mb-5">
+              <div class="col">
+                <div class="card shadow">
+                  <img
+                    src="https://picsum.photos/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Septian Ria Andika</h5>
+                    <p class="card-text">Managing Director</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow">
+                  <img
+                    src="https://picsum.photos/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Dhyta Anjani</h5>
+                    <p class="card-text">Bussiness Director</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow">
+                  <img
+                    src="https://picsum.photos/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Fidri Abherty</h5>
+                    <p class="card-text">Bussiness Director</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow">
+                  <img
+                    src="https://picsum.photos/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Widodo Anwar</h5>
+                    <p class="card-text">Creative Manager</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow">
+                  <img
+                    src="https://picsum.photos/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Ajie Indra Firdaus</h5>
+                    <p class="card-text">Production Manager</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card shadow">
+                  <img
+                    src="https://picsum.photos/200"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Febristi Medharsae</h5>
+                    <p class="card-text">Jr. Account Executive</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Contact Us-->
+          <div
+            class="row bg-primary mt-5 pt-5 px-5 rounded-bottom rounded-5 shadow-lg"
+          >
+            <div class="col-md-6">
+              <h1 id="contact" class="text-light">Contact Us</h1>
+              <div class="col-auto my-3">
+                <button
+                  type="button"
+                  class="btn btn-outline-light rounded rounded-5 py-2 px-3"
+                >
+                  <h4 class="">AdfCreative@gmail.com</h4>
+                </button>
+              </div>
+
+              <div class="col-8 mb-5">
+                <button
+                  type="button"
+                  class="btn btn-outline-light rounded rounded-4 py-2 me-2"
+                >
+                  <i class="fa-brands fa-instagram fa-xl"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-light rounded rounded-4 py-2 me-2"
+                >
+                  <i class="fa-brands fa-twitter fa-xl"></i>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-outline-light rounded rounded-4 py-2"
+                >
+                  <i class="fa-brands fa-linkedin-in fa-xl"></i>
+                </button>
+              </div>
+            </div>
+            <div class="col-md-6 mb-5">
+              <h1 class="text-light">Address</h1>
+
+              <p class="lead text-light">
+                <i class="fa-solid fa-location-dot text-light"></i>
+                Paviliun Hijau, Jl. Merpati Raya No.17, RT.003/RW.001, Sawah
+                Lama, Kec. Ciputat, Kota Tangerang Selatan, Banten 15413
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="aos/aos.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

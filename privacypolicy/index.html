@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — ADF Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #E8192C;
+      --red-dark: #c4111f;
+      --red-light: #fde8ea;
+      --ink: #1a1a1a;
+      --paper: #ffffff;
+      --muted: #6b6b6b;
+      --rule: #e8e8e8;
+      --font: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 3px solid var(--red);
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--paper);
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-adf { color: var(--red); }
+
+    .doc-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      border: 1px solid #f5b3b9;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--ink);
+      color: white;
+      padding: 4rem 2rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: var(--red);
+    }
+
+    .hero-inner {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span { color: var(--red); }
+
+    .hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+
+    .hero-meta strong {
+      font-weight: 700;
+      color: white;
+      display: block;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.15rem;
+      color: var(--red);
+    }
+
+    /* ── Layout ── */
+    .layout {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0 3.5rem;
+      align-items: start;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      position: sticky;
+      top: 5rem;
+      padding: 2.5rem 0;
+    }
+
+    .toc-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--red);
+      display: inline-block;
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc li {
+      counter-increment: toc;
+      margin-bottom: 0.35rem;
+    }
+
+    .toc a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      transition: color 0.15s;
+      line-height: 1.5;
+      padding: 0.2rem 0;
+    }
+
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .toc a:hover { color: var(--red); }
+
+    /* ── Content ── */
+    .content {
+      padding: 2.5rem 0 6rem;
+      border-left: 3px solid var(--red);
+      padding-left: 3rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.45s ease forwards;
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.10s; }
+    .section:nth-child(3)  { animation-delay: 0.15s; }
+    .section:nth-child(4)  { animation-delay: 0.20s; }
+    .section:nth-child(5)  { animation-delay: 0.25s; }
+    .section:nth-child(6)  { animation-delay: 0.30s; }
+    .section:nth-child(7)  { animation-delay: 0.35s; }
+    .section:nth-child(8)  { animation-delay: 0.40s; }
+    .section:nth-child(9)  { animation-delay: 0.45s; }
+    .section:nth-child(10) { animation-delay: 0.50s; }
+    .section:nth-child(11) { animation-delay: 0.55s; }
+    .section:nth-child(12) { animation-delay: 0.60s; }
+    .section:nth-child(13) { animation-delay: 0.65s; }
+    .section:nth-child(14) { animation-delay: 0.70s; }
+
+    .section-num {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.35rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    p { margin-bottom: 0.85rem; color: #3d3d3d; font-size: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+
+    ul { margin: 0.5rem 0 0.85rem 0; padding-left: 0; list-style: none; }
+
+    ul li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.4rem;
+      color: #3d3d3d;
+      font-size: 0.88rem;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+
+    /* ── Contact box ── */
+    .contact-box {
+      background: var(--ink);
+      color: white;
+      padding: 1.5rem 2rem;
+      margin-top: 1.5rem;
+      border-radius: 4px;
+      border-left: 4px solid var(--red);
+    }
+
+    .contact-box strong { font-weight: 700; display: block; margin-bottom: 0.25rem; font-size: 0.9rem; }
+    .contact-box a { color: var(--red); text-decoration: none; font-weight: 600; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--ink);
+      color: #888;
+      font-size: 0.78rem;
+      padding: 2rem;
+      text-align: center;
+      border-top: 3px solid var(--red);
+    }
+
+    footer a { color: var(--red); text-decoration: none; margin: 0 0.6rem; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Mobile ── */
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .content { border-left: none; padding-left: 0; border-top: 3px solid var(--red); padding-top: 2rem; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://adfcreative.com">
+      <span class="logo-adf">ADF</span> Creative
+    </a>
+    <span class="doc-badge">Privacy Policy</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Legal &amp; Transparency</p>
+    <h1>Privacy <span>Policy</span></h1>
+    <div class="hero-meta">
+      <div><strong>Last Updated</strong>May 2026</div>
+      <div><strong>Company</strong>ADF Creative</div>
+      <div><strong>Contact</strong>dhytaanj@gmail.com</div>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#scope">Scope</a></li>
+      <li><a href="#collect">What We Collect</a></li>
+      <li><a href="#use">How We Use It</a></li>
+      <li><a href="#whatsapp">WhatsApp &amp; OTP</a></li>
+      <li><a href="#reporting">Reporting &amp; Gamification</a></li>
+      <li><a href="#photo">Photo &amp; User Content</a></li>
+      <li><a href="#disclosure">Disclosure</a></li>
+      <li><a href="#storage">Storage &amp; Transfers</a></li>
+      <li><a href="#retention">Retention</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <p style="font-size:0.85rem; color:var(--muted); margin-bottom:2rem; line-height:1.7;">
+      This Privacy Policy explains how ADF Creative collects, uses, stores, discloses, and protects personal information when users access our websites, microsites, registration pages, WhatsApp verification services, event engagement systems, and related digital services. By using our services, you acknowledge that you have read and understood this policy.
+    </p>
+
+    <div class="section" id="scope">
+      <p class="section-num">01 — Scope</p>
+      <h2>Scope of this Privacy Policy</h2>
+      <p>This Privacy Policy applies to ADF Creative digital services, including:</p>
+      <ul>
+        <li>Event microsites and registration forms</li>
+        <li>WhatsApp Business Platform integrations</li>
+        <li>OTP and verification workflows</li>
+        <li>Gamification and engagement activities</li>
+        <li>Reporting dashboards and related communications</li>
+      </ul>
+      <p>This Privacy Policy may also apply when ADF Creative operates a digital experience on behalf of a client, sponsor, event organizer, or brand partner, in which case ADF Creative may process information as an authorized service provider or technology partner.</p>
+    </div>
+
+    <div class="section" id="collect">
+      <p class="section-num">02 — Data Collection</p>
+      <h2>Personal Information We Collect</h2>
+      <p>Depending on the service or event activity, we may collect:</p>
+      <ul>
+        <li><strong>Identity &amp; contact:</strong> name, email, telephone, company, job title, city, country, and registration details</li>
+        <li><strong>WhatsApp-related:</strong> phone number, delivery status, verification status, OTP request status, message template delivery logs, timestamps, and communication preferences</li>
+        <li><strong>Event &amp; participation:</strong> attendance status, booth check-in, activity participation, game scores, rankings, points, reward eligibility, and redemption status</li>
+        <li><strong>Technical:</strong> device type, browser type, IP address, access logs, session information, and system usage data</li>
+        <li><strong>User-submitted content:</strong> photos, uploaded images, survey responses, quiz answers, or booth activity outputs where applicable</li>
+      </ul>
+      <p>We do not intentionally collect more personal information than is reasonably necessary for the purposes described in this Privacy Policy.</p>
+    </div>
+
+    <div class="section" id="use">
+      <p class="section-num">03 — Data Use</p>
+      <h2>How We Use Personal Information</h2>
+      <p>We may use personal information for:</p>
+      <ul>
+        <li>Processing registration and managing access to events, microsites, and digital experiences</li>
+        <li>Verifying users through OTP, WhatsApp, or other authentication workflows</li>
+        <li>Sending service communications: verification codes, confirmations, reminders, and event instructions</li>
+        <li>Operating event engagement activities including quizzes, games, voting, leaderboards, and redemption workflows</li>
+        <li>Preparing attendance, engagement, performance, and redemption reports for operational and client reporting</li>
+        <li>Maintaining system security, preventing misuse, and improving our services</li>
+        <li>Complying with applicable laws, regulations, and enforcement requirements</li>
+        <li>Sending future event invitations or marketing communications only where permitted by law and with appropriate consent</li>
+      </ul>
+      <p>We do not sell personal information.</p>
+    </div>
+
+    <div class="section" id="whatsapp">
+      <p class="section-num">04 — Messaging</p>
+      <h2>WhatsApp Business Platform and OTP Communications</h2>
+      <p>ADF Creative may use the WhatsApp Business Platform — including Meta APIs and approved message templates — to send OTP codes, verification messages, event confirmations, reminders, and other service-related communications.</p>
+      <p>When we send WhatsApp messages, Meta Platforms and WhatsApp may process certain information in accordance with their own terms and policies. Users should review WhatsApp and Meta privacy information for details about how their platforms process data.</p>
+      <p>OTP or verification codes are used only to verify user access, registration, or participation. Users should not share verification codes with other people.</p>
+    </div>
+
+    <div class="section" id="reporting">
+      <p class="section-num">05 — Events</p>
+      <h2>Event Reporting and Gamification Data</h2>
+      <p>For event and campaign reporting purposes, we may process registration numbers, attendance status, booth traffic, activity participation, game scores, rankings, points, reward eligibility, reward redemption status, timestamps, and other engagement metrics.</p>
+      <p>Where possible, reports will be prepared in aggregate or summary form. Individual-level information may be used where necessary to verify attendance, validate scores, manage rewards, investigate misuse, support customer service, or resolve operational issues.</p>
+    </div>
+
+    <div class="section" id="photo">
+      <p class="section-num">06 — User Content</p>
+      <h2>Photo Booth, Images, and User-Generated Content</h2>
+      <p>If a service includes a photo booth, AI photo experience, image-based activity, or user-generated content feature, we may process photos or images that users voluntarily provide or generate during the activity.</p>
+      <p>Unless separately disclosed and consented to where required by law, we do not use facial recognition, biometric identification, or facial analysis to identify individuals. Image processing is used solely to deliver the requested event activity, output, or experience.</p>
+    </div>
+
+    <div class="section" id="disclosure">
+      <p class="section-num">07 — Sharing</p>
+      <h2>Disclosure of Personal Information</h2>
+      <p>We may disclose personal information to authorized parties where necessary, including:</p>
+      <ul>
+        <li>ADF Creative employees, contractors, event staff, booth operators, and authorized administrators</li>
+        <li>Clients, sponsors, brand owners, or event organizers for whom ADF Creative operates the microsite or booth experience</li>
+        <li>Technology vendors, hosting providers, database providers, analytics providers, messaging providers, and WhatsApp Business Platform service providers</li>
+        <li>Government authorities, regulators, courts, legal advisors, or auditors where required by law, legal process, compliance, security, or enforcement needs</li>
+      </ul>
+      <p>Service providers are required to process personal information only for authorized purposes and to apply reasonable confidentiality and security measures.</p>
+    </div>
+
+    <div class="section" id="storage">
+      <p class="section-num">08 — Storage</p>
+      <h2>Data Storage and International Transfers</h2>
+      <p>Personal information may be stored and processed in Indonesia or other locations where ADF Creative, its clients, or authorized service providers operate systems or cloud infrastructure. Where data is transferred or accessed outside Indonesia, we take reasonable steps to protect the information through appropriate confidentiality, security, and access-control measures.</p>
+    </div>
+
+    <div class="section" id="retention">
+      <p class="section-num">09 — Retention</p>
+      <h2>Data Retention</h2>
+      <p>We retain personal information only for as long as reasonably necessary for registration, verification, event operation, reporting, audit, legal, administrative, dispute resolution, and follow-up purposes.</p>
+      <p>Event registration, verification, and participation data may be retained for up to 24 months after the relevant event or campaign, unless a longer retention period is required or permitted for legal, audit, compliance, dispute, or legitimate administrative purposes. Contact information used for future communications may be retained until the user unsubscribes or withdraws consent where applicable.</p>
+    </div>
+
+    <div class="section" id="security">
+      <p class="section-num">10 — Security</p>
+      <h2>Security</h2>
+      <p>We implement reasonable technical, organizational, and administrative measures to protect personal information against unauthorized access, disclosure, alteration, loss, misuse, or destruction. These measures may include access controls, password protection, secure hosting, encryption where appropriate, limited administrative access, monitoring, and vendor confidentiality obligations.</p>
+      <p>However, no website, API, messaging platform, or internet transmission is completely secure. We cannot guarantee absolute security of personal information.</p>
+    </div>
+
+    <div class="section" id="rights">
+      <p class="section-num">11 — Your Rights</p>
+      <h2>User Rights and Choices</h2>
+      <p>Subject to applicable law, users may have the right to request access to, correction of, deletion of, restriction of, or withdrawal of consent for the processing of their personal information. Users may also request information about how their personal information is used.</p>
+      <p>To exercise these rights, please contact us using the contact details provided below. We may need to verify the requester's identity before processing the request.</p>
+    </div>
+
+    <div class="section" id="children">
+      <p class="section-num">12 — Children</p>
+      <h2>Children's Privacy</h2>
+      <p>Our services are generally intended for event visitors, business users, professional audiences, or users who are authorized to participate in the relevant activity. They are not directed to children. If a child participates in an event activity, such participation should be supervised or authorized by a parent, guardian, school, event organizer, or responsible adult where required.</p>
+      <p>If you believe that a child has provided personal information without appropriate authorization, please contact us and we will take reasonable steps to review and delete the information where required.</p>
+    </div>
+
+    <div class="section" id="changes">
+      <p class="section-num">13 — Updates</p>
+      <h2>Changes to this Privacy Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Updated versions will be posted on the relevant website, microsite, or made available through appropriate channels. Continued use of the services after changes are posted constitutes acknowledgement of the updated Privacy Policy.</p>
+    </div>
+
+    <div class="section" id="contact">
+      <p class="section-num">14 — Contact</p>
+      <h2>Contact Us</h2>
+      <p>If you have questions, requests, or concerns regarding this Privacy Policy or our handling of personal information, please reach out:</p>
+      <div class="contact-box">
+        <strong>ADF Creative</strong>
+        Email: <a href="mailto:dhytaanj@gmail.com">dhytaanj@gmail.com</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <p>
+    &copy; 2026 ADF Creative &nbsp;&middot;&nbsp;
+    <a href="/privacypolicy">Privacy Policy</a>
+    <a href="/termsofservice">Terms of Service</a>
+    <a href="https://adfcreative.com">Home</a>
+  </p>
+</footer>
+
+</body>
+</html>

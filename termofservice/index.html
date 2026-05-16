@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — ADF Creative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #E8192C;
+      --red-dark: #c4111f;
+      --red-light: #fde8ea;
+      --ink: #1a1a1a;
+      --paper: #ffffff;
+      --muted: #6b6b6b;
+      --rule: #e8e8e8;
+      --font: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 15px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 3px solid var(--red);
+      padding: 1.25rem 0;
+      position: sticky;
+      top: 0;
+      background: var(--paper);
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .header-inner {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: var(--font);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo-adf { color: var(--red); }
+
+    .doc-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      background: var(--red-light);
+      padding: 0.35rem 0.85rem;
+      border-radius: 3px;
+      border: 1px solid #f5b3b9;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--ink);
+      color: white;
+      padding: 4rem 2rem 3.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 6px;
+      background: var(--red);
+    }
+
+    .hero-inner {
+      max-width: 940px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 span { color: var(--red); }
+
+    .hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+
+    .hero-meta strong {
+      font-weight: 700;
+      display: block;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.15rem;
+      color: var(--red);
+    }
+
+    /* ── Layout ── */
+    .layout {
+      max-width: 940px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 0 3.5rem;
+      align-items: start;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      position: sticky;
+      top: 5rem;
+      padding: 2.5rem 0;
+    }
+
+    .toc-title {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--red);
+      display: inline-block;
+    }
+
+    .toc ol { list-style: none; counter-reset: toc; }
+
+    .toc li {
+      counter-increment: toc;
+      margin-bottom: 0.35rem;
+    }
+
+    .toc a {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      transition: color 0.15s;
+      line-height: 1.5;
+      padding: 0.2rem 0;
+    }
+
+    .toc a::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .toc a:hover { color: var(--red); }
+
+    /* ── Content ── */
+    .content {
+      padding: 2.5rem 0 6rem;
+      border-left: 3px solid var(--red);
+      padding-left: 3rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--rule);
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.45s ease forwards;
+    }
+
+    .section:last-child { border-bottom: none; }
+
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+    .section:nth-child(1)  { animation-delay: 0.05s; }
+    .section:nth-child(2)  { animation-delay: 0.10s; }
+    .section:nth-child(3)  { animation-delay: 0.15s; }
+    .section:nth-child(4)  { animation-delay: 0.20s; }
+    .section:nth-child(5)  { animation-delay: 0.25s; }
+    .section:nth-child(6)  { animation-delay: 0.30s; }
+    .section:nth-child(7)  { animation-delay: 0.35s; }
+    .section:nth-child(8)  { animation-delay: 0.40s; }
+    .section:nth-child(9)  { animation-delay: 0.45s; }
+    .section:nth-child(10) { animation-delay: 0.50s; }
+    .section:nth-child(11) { animation-delay: 0.55s; }
+    .section:nth-child(12) { animation-delay: 0.60s; }
+    .section:nth-child(13) { animation-delay: 0.65s; }
+    .section:nth-child(14) { animation-delay: 0.70s; }
+    .section:nth-child(15) { animation-delay: 0.75s; }
+
+    .section-num {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.35rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    p { margin-bottom: 0.85rem; color: #3d3d3d; font-size: 0.9rem; }
+    p:last-child { margin-bottom: 0; }
+
+    ul { margin: 0.5rem 0 0.85rem 0; padding-left: 0; list-style: none; }
+
+    ul li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.4rem;
+      color: #3d3d3d;
+      font-size: 0.88rem;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      background: var(--red);
+      border-radius: 50%;
+    }
+
+    /* ── Definitions table ── */
+    .definitions {
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .def-row {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .def-row:last-child { border-bottom: none; }
+
+    .def-term {
+      background: var(--red);
+      color: white;
+      padding: 0.75rem 1rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+    }
+
+    .def-body {
+      padding: 0.75rem 1rem;
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ── Contact box ── */
+    .contact-box {
+      background: var(--ink);
+      color: white;
+      padding: 1.5rem 2rem;
+      margin-top: 1.5rem;
+      border-radius: 4px;
+      border-left: 4px solid var(--red);
+    }
+
+    .contact-box strong { font-weight: 700; display: block; margin-bottom: 0.25rem; font-size: 0.9rem; }
+    .contact-box a { color: var(--red); text-decoration: none; font-weight: 600; }
+    .contact-box a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--ink);
+      color: #888;
+      font-size: 0.78rem;
+      padding: 2rem;
+      text-align: center;
+      border-top: 3px solid var(--red);
+    }
+
+    footer a { color: var(--red); text-decoration: none; margin: 0 0.6rem; font-weight: 600; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ── Mobile ── */
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .content { border-left: none; padding-left: 0; border-top: 3px solid var(--red); padding-top: 2rem; }
+      h1 { font-size: 2rem; }
+      .def-row { grid-template-columns: 1fr; }
+      .def-term { border-bottom: 1px solid var(--red-dark); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://adfcreative.com">
+      <span class="logo-adf">ADF</span> Creative
+    </a>
+    <span class="doc-badge">Terms of Service</span>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Legal &amp; Transparency</p>
+    <h1>Terms of <span>Service</span></h1>
+    <div class="hero-meta">
+      <div><strong>Last Updated</strong>May 2026</div>
+      <div><strong>Company</strong>ADF Creative</div>
+      <div><strong>Contact</strong>dhytaanj@gmail.com</div>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <nav class="toc" aria-label="Table of contents">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#definitions">Definitions</a></li>
+      <li><a href="#use">Use of Services</a></li>
+      <li><a href="#registration">Registration &amp; Verification</a></li>
+      <li><a href="#participation">Event Participation</a></li>
+      <li><a href="#gamification">Gamification &amp; Rewards</a></li>
+      <li><a href="#photo">Photo &amp; User Content</a></li>
+      <li><a href="#ip">Intellectual Property</a></li>
+      <li><a href="#privacy">Privacy</a></li>
+      <li><a href="#third-party">Third-Party Platforms</a></li>
+      <li><a href="#availability">Availability</a></li>
+      <li><a href="#liability">Limitation of Liability</a></li>
+      <li><a href="#indemnification">Indemnification</a></li>
+      <li><a href="#law">Governing Law</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ol>
+  </nav>
+
+  <main class="content">
+
+    <p style="font-size:0.85rem; color:var(--muted); margin-bottom:2rem; line-height:1.7;">
+      These Terms of Service govern access to and use of ADF Creative websites, microsites, registration pages, WhatsApp verification services, event engagement systems, gamification activities, reporting features, and related digital services. By accessing or using our services, you agree to these Terms.
+    </p>
+
+    <div class="section" id="definitions">
+      <p class="section-num">01 — Definitions</p>
+      <h2>Definitions</h2>
+      <div class="definitions">
+        <div class="def-row">
+          <div class="def-term">ADF Creative</div>
+          <div class="def-body">"ADF Creative", "we", "us", or "our" — the operator or technology provider of the relevant service.</div>
+        </div>
+        <div class="def-row">
+          <div class="def-term">You / User</div>
+          <div class="def-body">Any visitor, registrant, participant, administrator, or person using the services.</div>
+        </div>
+        <div class="def-row">
+          <div class="def-term">Services</div>
+          <div class="def-body">ADF Creative websites, microsites, registration systems, WhatsApp verification workflows, event engagement systems, gamification activities, dashboards, and related digital services.</div>
+        </div>
+        <div class="def-row">
+          <div class="def-term">Content</div>
+          <div class="def-body">Text, images, videos, logos, graphics, software, data, materials, templates, designs, and other content made available through the services.</div>
+        </div>
+        <div class="def-row">
+          <div class="def-term">Personal Information</div>
+          <div class="def-body">Information that identifies or can reasonably identify a user.</div>
+        </div>
+        <div class="def-row">
+          <div class="def-term">Event Activities</div>
+          <div class="def-body">Booth engagement, registration, voting, quizzes, games, scoring, point collection, rewards, photo booth activities, and other interactive event experiences.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="use">
+      <p class="section-num">02 — Use of Services</p>
+      <h2>Use of the Services</h2>
+      <p>You agree to use the services only for lawful purposes and in accordance with these Terms. You agree to provide accurate, current, and complete information when registering, verifying your phone number, or participating in event activities.</p>
+      <p>You agree <strong>not to</strong>:</p>
+      <ul>
+        <li>Misuse the services or submit false or misleading information</li>
+        <li>Impersonate another person or attempt unauthorized access</li>
+        <li>Interfere with system operation or upload harmful software</li>
+        <li>Manipulate scores or votes, or disrupt other users</li>
+        <li>Use the services in violation of applicable laws or regulations</li>
+      </ul>
+    </div>
+
+    <div class="section" id="registration">
+      <p class="section-num">03 — Registration</p>
+      <h2>Registration, Verification, and WhatsApp Messages</h2>
+      <p>Some services may require registration, phone number verification, OTP verification, or WhatsApp communication. You are responsible for ensuring that the phone number and contact information you provide are accurate and that you are authorized to use them.</p>
+      <p>ADF Creative may send verification codes, service messages, event confirmations, reminders, and other operational communications through WhatsApp Business Platform, email, SMS, or other communication channels where applicable.</p>
+      <p>You must keep OTP codes and verification credentials confidential. ADF Creative is not responsible for misuse caused by users sharing verification codes or providing inaccurate contact information.</p>
+    </div>
+
+    <div class="section" id="participation">
+      <p class="section-num">04 — Event Participation</p>
+      <h2>Event Participation and Availability</h2>
+      <p>Registration through a microsite or digital service does not guarantee access to all event areas, sessions, benefits, rewards, merchandise, or activities. Participation may be subject to capacity, organizer rules, onsite verification, event availability, age restrictions where applicable, and other operational requirements.</p>
+      <p>We may change, suspend, limit, or discontinue any part of an event activity or service at any time for operational, technical, security, legal, or business reasons.</p>
+    </div>
+
+    <div class="section" id="gamification">
+      <p class="section-num">05 — Gamification</p>
+      <h2>Gamification, Scores, Voting, and Rewards</h2>
+      <p>Gamification and engagement activities are provided for event interaction, entertainment, education, or campaign participation. Rules, scoring, points, rankings, voting methods, eligibility, rewards, and activity mechanics may vary by event or campaign.</p>
+      <p>You agree to participate fairly and not to:</p>
+      <ul>
+        <li>Manipulate results or bypass system controls</li>
+        <li>Create duplicate entries or use unauthorized tools</li>
+        <li>Interfere with other participants or exploit technical errors</li>
+      </ul>
+      <p>We may disqualify participation, adjust scores, withhold rewards, remove entries, or suspend access if misuse, duplicate participation, technical error, or unfair conduct is suspected.</p>
+      <p>Rewards, merchandise, vouchers, prizes, or benefits are subject to availability, quantity limits, verification requirements, time limits, and event-specific rules. They may be changed or discontinued at the discretion of ADF Creative, the client, sponsor, or event organizer.</p>
+    </div>
+
+    <div class="section" id="photo">
+      <p class="section-num">06 — User Content</p>
+      <h2>Photo Booth and User-Generated Content</h2>
+      <p>If you participate in a photo booth, AI photo experience, image-based activity, or user-generated content feature, you are responsible for ensuring that your participation and submitted content do not infringe the rights, privacy, or consent of other individuals.</p>
+      <p>You agree not to submit, generate, or share content that is unlawful, offensive, defamatory, abusive, discriminatory, harassing, threatening, obscene, misleading, infringing, or otherwise inappropriate. We may remove or refuse to process content that violates these Terms or applicable rules.</p>
+    </div>
+
+    <div class="section" id="ip">
+      <p class="section-num">07 — Intellectual Property</p>
+      <h2>Intellectual Property</h2>
+      <p>All Content and technology made available through the services are owned by or licensed to ADF Creative, its clients, partners, or licensors and are protected by copyright, trademark, and other intellectual property laws.</p>
+      <p>You may not copy, reproduce, modify, distribute, publish, display, sell, license, reverse engineer, or otherwise use any Content or service component without prior written consent, except as expressly permitted by us or applicable law.</p>
+    </div>
+
+    <div class="section" id="privacy">
+      <p class="section-num">08 — Privacy</p>
+      <h2>Privacy</h2>
+      <p>Our <a href="/privacypolicy" style="color:var(--red); text-decoration:none; font-weight:600; border-bottom: 2px solid var(--red-light);">Privacy Policy</a> forms part of these Terms. Please review the Privacy Policy to understand how personal information is collected, used, disclosed, stored, and protected in connection with the services.</p>
+    </div>
+
+    <div class="section" id="third-party">
+      <p class="section-num">09 — Third Parties</p>
+      <h2>Third-Party Platforms and Services</h2>
+      <p>The services may rely on or link to third-party platforms, including Meta, WhatsApp, hosting providers, analytics providers, payment providers, event platforms, or other technology providers. ADF Creative is not responsible for the availability, security, policies, or practices of third-party platforms, except to the extent required by applicable law.</p>
+    </div>
+
+    <div class="section" id="availability">
+      <p class="section-num">10 — Availability</p>
+      <h2>Availability and Technical Issues</h2>
+      <p>We aim to provide reliable services, but we do not guarantee that the services, registration system, WhatsApp messages, OTP delivery, gamification activities, scoring, ranking, dashboards, or other digital features will always be available, uninterrupted, error-free, secure, or compatible with every device, browser, or network.</p>
+      <p>We may update, suspend, maintain, or discontinue any part of the services at any time for operational, technical, security, legal, event, or business reasons.</p>
+    </div>
+
+    <div class="section" id="liability">
+      <p class="section-num">11 — Limitation of Liability</p>
+      <h2>Limitation of Liability</h2>
+      <p>To the maximum extent permitted by applicable law, ADF Creative will not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages arising from or related to use of the services, event participation, verification, WhatsApp messages, gamification, scores, rewards, or technical issues.</p>
+      <p>Nothing in these Terms excludes or limits liability that cannot be excluded or limited under applicable law.</p>
+    </div>
+
+    <div class="section" id="indemnification">
+      <p class="section-num">12 — Indemnification</p>
+      <h2>Indemnification</h2>
+      <p>You agree to indemnify, defend, and hold harmless ADF Creative, its employees, contractors, clients, partners, and service providers from and against claims, damages, liabilities, losses, costs, and expenses arising from your misuse of the services, violation of these Terms, submission of inaccurate information, infringement of third-party rights, unauthorized content, or unlawful conduct.</p>
+    </div>
+
+    <div class="section" id="law">
+      <p class="section-num">13 — Governing Law</p>
+      <h2>Governing Law</h2>
+      <p>These Terms are governed by the applicable laws of the Republic of Indonesia, unless otherwise required by mandatory applicable law.</p>
+    </div>
+
+    <div class="section" id="changes">
+      <p class="section-num">14 — Updates</p>
+      <h2>Changes to these Terms</h2>
+      <p>We may amend these Terms from time to time. Updated versions will be posted on the relevant website, microsite, or made available through appropriate channels. Continued use of the services after changes are posted constitutes acceptance of the updated Terms.</p>
+    </div>
+
+    <div class="section" id="contact">
+      <p class="section-num">15 — Contact</p>
+      <h2>Contact Us</h2>
+      <p>If you have any questions about these Terms, please reach out:</p>
+      <div class="contact-box">
+        <strong>ADF Creative</strong>
+        Email: <a href="mailto:dhytaanj@gmail.com">dhytaanj@gmail.com</a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <p>
+    &copy; 2026 ADF Creative &nbsp;&middot;&nbsp;
+    <a href="/privacypolicy">Privacy Policy</a>
+    <a href="/termsofservice">Terms of Service</a>
+    <a href="https://adfcreative.com">Home</a>
+  </p>
+</footer>
+
+</body>
+</html>
